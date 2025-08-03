@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChicLiving Furniture</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f3f0;
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-[#f7f3f0]">
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="#" class="text-3xl font-bold text-gray-800 tracking-tight" id="home-link">Chic<span class="text-amber-500">Living</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="category-link text-gray-600 hover:text-amber-500 transition-colors duration-300 font-medium" data-category="bedroom">Bedroom</a>
+                <a href="#" class="category-link text-gray-600 hover:text-amber-500 transition-colors duration-300 font-medium" data-category="dining">Dining Room</a>
+                <a href="#" class="category-link text-gray-600 hover:text-amber-500 transition-colors duration-300 font-medium" data-category="drawing">Living Room</a>
+                <a href="#" class="category-link text-gray-600 hover:text-amber-500 transition-colors duration-300 font-medium" data-category="kitchen">Kitchen</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="cart-button" class="relative text-gray-600 hover:text-amber-500 transition-colors duration-300 p-2 rounded-full hover:bg-gray-100">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span id="cart-count" class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">0</span>
+                </button>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 p-2 rounded-md hover:bg-gray-100">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div id="mobile-nav-links" class="flex flex-col p-4 space-y-2">
+                <!-- Mobile nav links will be injected here by JS -->
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 mt-8 mb-16">
+        <!-- Home Page -->
+        <section id="home-page">
+            <!-- Hero Section -->
+            <div class="bg-white rounded-3xl p-8 md:p-16 mb-12 shadow-lg flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">Elevate Your Home with <span class="text-amber-500">Timeless</span> Furniture</h1>
+                    <p class="text-lg text-gray-600 mb-6">Discover our curated collection of high-quality, stylish furniture designed to transform your living spaces.</p>
+                    <button class="shop-now-button inline-block px-8 py-3 text-lg font-semibold text-white bg-amber-500 rounded-full shadow-lg hover:bg-amber-600 transition-colors duration-300">Shop Now</button>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.woodenstreet.de/image/cache/data/fabric-sofa/osbert-3-seater-curved-sofa/jade-ivory/new+/Osbert-3-Seater-750x650.jpg" alt="Modern Sofa" class="w-full h-auto rounded-3xl shadow-xl">
+                </div>
+            </div>
+
+            <!-- Categories Section -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-8">Browse Categories</h2>
+                <div id="category-links-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Category links will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Page (Hidden by default) -->
+        <section id="category-page" class="hidden">
+            <div class="flex items-center mb-8 space-x-4">
+                <button id="back-to-home" class="text-gray-600 hover:text-amber-500 transition-colors duration-300">
+                    <i class="fa-solid fa-arrow-left text-2xl"></i>
+                </button>
+                <h2 id="category-page-title" class="text-4xl font-bold text-gray-800"></h2>
+            </div>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Products for the selected category will be injected here by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 ChicLiving Furniture. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="product-detail-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-[9999] hidden">
+        <div class="bg-white rounded-3xl p-8 w-full max-w-4xl shadow-xl transform transition-all duration-300 scale-95">
+            <div class="flex justify-end">
+                <button id="close-detail-modal" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex justify-center">
+                    <img id="modal-image" src="" alt="Product Image" class="rounded-2xl w-full h-auto max-h-96 object-contain">
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <h3 id="modal-name" class="text-4xl font-bold text-gray-800 mb-2"></h3>
+                        <p id="modal-price" class="text-2xl text-amber-600 font-semibold mb-4"></p>
+                        <p id="modal-description" class="text-gray-600 mb-6"></p>
+                    </div>
+                    <button id="add-to-cart-button" class="bg-amber-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-amber-600 transition-colors duration-300 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-[9999] hidden">
+        <div class="bg-white rounded-3xl p-8 w-full max-w-2xl shadow-xl transform transition-all duration-300 scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-3xl font-bold text-gray-800">Your Cart</h3>
+                <button id="close-cart-modal" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div id="cart-items" class="space-y-4 max-h-96 overflow-y-auto mb-6">
+                <!-- Cart items will be injected here -->
+            </div>
+            <div id="cart-total-container" class="flex justify-between items-center border-t pt-4">
+                <span class="text-2xl font-bold text-gray-800">Total:</span>
+                <span id="cart-total" class="text-2xl font-bold text-amber-600">$0.00</span>
+            </div>
+            <div class="mt-6">
+             <button id="checkout-button" class="w-full bg-amber-500 text-white font-semibold py-4 rounded-full hover:bg-amber-600 transition-colors duration-300">
+    Proceed to Checkout
+</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Simulation Modal -->
+    <div id="payment-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-[9999] hidden">
+        <div class="bg-white rounded-3xl p-8 w-full max-w-md text-center shadow-xl transform transition-all duration-300 scale-95">
+            <div class="flex justify-end">
+                <button id="close-payment-modal" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <i class="fa-solid fa-circle-check text-green-500 text-6xl mb-4"></i>
+            <h3 class="text-3xl font-bold text-gray-800 mb-2">Payment Successful!</h3>
+            <p class="text-gray-600 mb-6">Thank you for your order. Your items will be shipped soon.</p>
+            <button id="back-to-shop-button" class="bg-amber-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-amber-600 transition-colors duration-300">
+                Back to Shop
+            </button>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
