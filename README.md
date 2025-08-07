@@ -1,4 +1,4 @@
-# 🪑 ChicLiving Furniture – Modern Furniture E-Commerce UI (Tailwind CSS + JavaScript)
+# 🪑 ChicLiving Furniture – Modern Furniture E-Commerce UI 
 
 **ChicLiving Furniture** is a clean, responsive, and user-friendly e-commerce web application tailored for modern furniture and home décor. Built with **Tailwind CSS** and **Vanilla JavaScript**, this project showcases dynamic category browsing, product detail modals, an interactive shopping cart, and a seamless checkout simulation — all designed to deliver a polished front-end shopping experience.
 
@@ -80,6 +80,22 @@ This project is ideal for frontend developers, UI/UX designers, or anyone lookin
 🛒 Add to Cart Modal
 
 <img width="1842" height="869" alt="Screenshot 2025-08-07 124714" src="https://github.com/user-attachments/assets/b306b44c-a60a-49a1-aa6c-7ba6c1a4c33a" />
+
+---
+
+## 📂 Getting Started
+
+To set up and run this project locally:
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/chicliving-furniture.git
+   cd chicliving-furniture
+ 2. Run the project
+
+Open index.html directly in your browser
+
+Or serve it using a local server (e.g., Live Server or Python HTTP server)
 
 ---
 
