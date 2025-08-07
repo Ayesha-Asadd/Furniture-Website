@@ -53,23 +53,6 @@ This project is ideal for frontend developers, UI/UX designers, or anyone lookin
 
 ---
 
-## 📂 Getting Started
-
-To set up and run this project locally:
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/chicliving-furniture.git
-   cd chicliving-furniture
-````
-
-2. **Run the project**
-
-   * Open `index.html` directly in your browser
-   * Or serve it using a local server (e.g., Live Server or Python HTTP server)
-
----
-
 ## 🎯 Keywords
 
 > Furniture Store Website Template, E-Commerce UI Tailwind CSS, JavaScript Shopping Cart UI, Responsive Furniture Web Design, Buy Home Furniture Online, Modern E-Commerce Layout, Furniture Landing Page HTML
@@ -89,6 +72,3 @@ Feel free to use, modify, and share with attribution.
 🔗 [GitHub Profile](https://github.com/Ayesha-Asadd)
 
 
-
-Let me know if you'd like help creating a project banner or setting up deployment previews on Netlify or Vercel.
-```
