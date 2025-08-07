@@ -115,6 +115,6 @@ Feel free to use, modify, and share with attribution.
 ## 📧 Contact
 
 **👩‍💻 Ayesha Asad**
-🔗 [LinkedIN](www.linkedin.com/in/ayesha-mukhtar-asad-76947026b)
+🔗 [LinkedIn](www.linkedin.com/in/ayesha-mukhtar-asad-76947026b)
 
 
